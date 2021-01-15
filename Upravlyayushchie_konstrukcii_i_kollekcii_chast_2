@@ -1,0 +1,43 @@
+#«Управляющие конструкции и коллекции» часть 2. ДЗ №1
+ids = {'user1': [213, 213, 213, 15, 213],
+'user2': [54, 54, 119, 119, 119],
+'user3': [213, 98, 98, 35]}
+x = set(sum(ids.values(), []))
+print('Результат:',x)
+
+#«Управляющие конструкции и коллекции» часть 2. ДЗ №2
+queries = ['смотреть сериалы онлайн','новости спорта','афиша кино','курс доллара','сериалы этим летом','курс по питону','сериалы про спорт',]
+sum_el_queries = len(queries)
+two_words=0
+three_words=0
+for i in queries:
+    length_element = len(i.split(" "))
+    if length_element == 2:
+        two_words += 1
+    else:
+        three_words += 1
+calc_two_words = (two_words/sum_el_queries)*100
+calc_three_words = (three_words/sum_el_queries)*100
+print(f'Поисковых запросов, содержащих 2 слов(а): {round(calc_two_words,2)}%')
+print(f'Поисковых запросов, содержащих 3 слов(а): {round(calc_three_words,2)}%')
+
+#«Управляющие конструкции и коллекции» часть 2. ДЗ №3
+results = {
+'vk': {'revenue': 103, 'cost': 98},
+'yandex': {'revenue': 179, 'cost': 153},
+'facebook': {'revenue': 103, 'cost': 110},
+'adwords': {'revenue': 35, 'cost': 34},
+'twitter': {'revenue': 11, 'cost': 24},
+}
+for i in results:
+    roi = (results[i]['revenue'] / results[i]['cost'] - 1) * 100
+    results[i]['roi'] = round(roi, 2)
+print(results)
+
+
+#«Управляющие конструкции и коллекции» часть 2. ДЗ №4
+stats = {'facebook': 55, 'yandex': 115, 'vk': 120, 'google': 99, 'email': 42, 'ok': 98}
+maks = max(stats.values())
+for k,l in stats.items():
+    if l == maks:
+        print("Максимальный объем продаж на рекламном канале:",k)
